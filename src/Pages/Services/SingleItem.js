@@ -18,7 +18,7 @@ const SingleItem = () => {
     }, [user?.email])
 
     return (
-       <div className='grid grid-cols-1 lg:grid-cols-2'>
+       <div className='grid grid-cols-1 lg:grid-cols-2 w-full'>
          <div className=' m-auto py-10'>
             <div className='shadow-2xl p-6 rounded-xl'>
                 <img className='h-auto m-auto w-full' src={img} alt="" />
