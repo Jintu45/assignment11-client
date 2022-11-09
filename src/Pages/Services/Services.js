@@ -6,7 +6,7 @@ const Services = () => {
 
 
     useEffect(()=>{
-        fetch('items.json')
+        fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => setUsers(data))
     },[])
