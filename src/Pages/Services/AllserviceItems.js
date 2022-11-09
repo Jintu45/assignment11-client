@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceItems = ({user}) => {
-    const {_id, title, img, price, rating, details} = user
+const AllserviceItems = ({service}) => {
+    const {_id, title, img, price, rating, details} = service;
     return (
         <div className='shadow-2xl p-6 rounded-xl'>
             <img className='w-full h-72' src={img} alt="" />
@@ -21,7 +21,7 @@ const ServiceItems = ({user}) => {
                 <button className='btn btn-primary mt-4'>See details</button>
             </Link>
         </div>
-    );
+    )
 };
 
-export default ServiceItems;
+export default AllserviceItems;

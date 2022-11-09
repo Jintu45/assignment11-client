@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {login} = useContext(AuthContext)
+    const {login, googleLogin} = useContext(AuthContext)
 
     const handleLogin = event => {
         event.preventDefault()
@@ -18,6 +18,17 @@ const Login = () => {
         })
         .catch(error => {
             alert(error)
+        })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error => {
+            console.log(error)
         })
     }
 
@@ -47,7 +58,7 @@ const Login = () => {
 
                 <div className='text-center mb-5'>
                     <Link>
-                        <button className='border-transparent rounded-xl py-2 px-8 bg-stone-500 text-white'>continue with google</button>
+                        <button onClick={handleGoogleLogin} className='border-transparent rounded-xl py-2 px-8 bg-stone-500 text-white'>continue with google</button>
                     </Link>
 
                     <p className='mt-4 '>already have an account please <Link className='text-blue-500 border-b-blue-500 font-bold' to='/register'>Register</Link></p>
