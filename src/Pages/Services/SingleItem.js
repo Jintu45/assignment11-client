@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaBeer, FaStar } from 'react-icons/fa';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Review from './Review';
 
 const SingleItem = () => {
     const service = useLoaderData()
     const {_id, title, img, details, price, rating} = service
+    const {user} = useContext(AuthContext)
+    const [reviews, setReviews] = useState([])
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    }, [user?.email])
+
     return (
        <div className='grid grid-cols-1 lg:grid-cols-2'>
          <div className=' m-auto py-10'>
@@ -26,8 +38,15 @@ const SingleItem = () => {
         </div>
 
         <div className='text-center py-10'>
+                {
+                    reviews.map(review => <Review
+                        key={review._id}
+                        review={review}
+                    >
+                    </Review>)
+                }
             <Link to={`/review/${_id}`}>
-                <button className='btn btn-primary'>Add Review</button>
+                <button className='btn btn-primary mt-8'>Add Review</button>
             </Link>
         </div>
        </div>
