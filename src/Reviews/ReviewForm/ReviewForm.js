@@ -27,7 +27,7 @@ const ReviewForm = () => {
             reviewTitle: title
         }
 
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://assignment11-server-jet.vercel.app/reviews',{
             method: 'POST',
             headers:{
                 'content-type': "application/json"

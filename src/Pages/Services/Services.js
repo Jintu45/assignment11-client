@@ -7,7 +7,7 @@ const Services = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://assignment11-server-jet.vercel.app/services')
         .then(res => res.json())
         .then(data => setUsers(data))
     },[])

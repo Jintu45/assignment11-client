@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# assignment 11 ----> sports photography 
+
+1. firstly install react then open vs code and npm start project.
+2. second install css framework, firebase, react router dom etc.  
+3. thirdly create some component and design website.
+4. fourthly install express and some work in server then add mongodb and work database.
+3.  than hosting website in firebase server open live server and copy this live server link and submit programming hero website .

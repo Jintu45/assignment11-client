@@ -12,7 +12,7 @@ const SingleItem = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://assignment11-server-jet.vercel.app/reviews?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setReviews(data))
     }, [user?.email])

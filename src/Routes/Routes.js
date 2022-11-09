@@ -37,12 +37,12 @@ const router = createBrowserRouter([
             {
                 path: '/singleitem/:id',
                 element : <SingleItem></SingleItem>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment11-server-jet.vercel.app/services/${params.id}`)
             },
             {
                 path: '/review/:id',
                 element : <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment11-server-jet.vercel.app/services/${params.id}`)
             }
         ]
     }
