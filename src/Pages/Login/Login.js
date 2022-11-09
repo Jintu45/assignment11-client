@@ -61,7 +61,7 @@ const Login = () => {
                         <button onClick={handleGoogleLogin} className='border-transparent rounded-xl py-2 px-8 bg-stone-500 text-white'>continue with google</button>
                     </Link>
 
-                    <p className='mt-4 '>already have an account please <Link className='text-blue-500 border-b-blue-500 font-bold' to='/register'>Register</Link></p>
+                    <p className='mt-4 '>Create new account please <Link className='text-blue-500 border-b-blue-500 font-bold' to='/register'>Register</Link></p>
                 </div>
             </div>
         </div>

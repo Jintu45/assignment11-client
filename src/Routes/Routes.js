@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
 import Allservices from "../Pages/Services/Allservices";
 import SingleItem from "../Pages/Services/SingleItem";
+import ReviewForm from "../Reviews/ReviewForm/ReviewForm";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
             {
                 path: '/singleitem/:id',
                 element : <SingleItem></SingleItem>,
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/review/:id',
+                element : <ReviewForm></ReviewForm>,
                 loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
             }
         ]
