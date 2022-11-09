@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from '../../../../assets/logo/logo.png'
 const Header = () => {
     return (
-        <div className="navbar bg-stone-400 w-full">
+        <div className="navbar h-28 w-full">
                     <div className="navbar-start">
                         <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -11,18 +11,19 @@ const Header = () => {
                         </label>
                         
                         </div>
-                        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                        <img src={logo} alt="" />
+                        <a className="btn btn-ghost normal-case text-2xl">SK Photography</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal p-0">
-                            <Link  className='text text-stone-100 font-semibold  text mr-5' to='/'>Home</Link>
-                            <Link  className='text text-stone-100 font-semibold  text mr-5'>Services</Link>
-
+                            <Link  className='text text-stone-600 font-semibold  text mr-5' to='/'>Home</Link>
+                            <Link  className='text text-stone-600 font-semibold  text mr-5'>Services</Link>
+                            <Link to='/blog' className='text text-stone-600 font-semibold  text mr-5'>Blogs</Link>
                         </ul>
                     </div>
                    <div className="navbar-end">
                    <Link to='/login'>
-                        <button className='btn btn-primary py-2'>Log In</button>
+                        <button className='btn btn-primary py-2 px-6'>Log In</button>
                    </Link>
                     </div>
         </div>
