@@ -4,7 +4,7 @@ import logo from '../../../../assets/logo/logo.png'
 import { AuthContext } from '../../../../AuthProvider/AuthProvider';
 const Header = () => {
     const {user, signUp} = useContext(AuthContext)
-
+    
     const handleLogOut = event => {
         signUp()
         .then(() => {})

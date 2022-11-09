@@ -21,7 +21,9 @@ const SingleItem = () => {
        <div className='grid grid-cols-1 lg:grid-cols-2 w-full'>
          <div className=' m-auto py-10'>
             <div className='shadow-2xl p-6 rounded-xl'>
+
                 <img className='h-auto m-auto w-full' src={img} alt="" />
+                
                 <h2 className='text-2xl'>{title}</h2>
                 <h3 className='font-bold text-orange-500 my-3'>Price: {price}</h3>
                 <div className='flex items-center'>
