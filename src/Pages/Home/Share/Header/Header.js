@@ -28,7 +28,7 @@ const Header = () => {
                             {
                                 user?.email ?
 
-                                    <Link to='/' className='text text-stone-600 font-semibold  text mr-5'>My reviews</Link>
+                                    <Link to='/allReviews' className='text text-stone-600 font-semibold  text mr-5'>My reviews</Link>
                                     :
                                     <>
                                     </>

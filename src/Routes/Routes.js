@@ -7,6 +7,7 @@ import Register from "../Pages/Login/Register";
 import Allservices from "../Pages/Services/Allservices";
 import SingleItem from "../Pages/Services/SingleItem";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AllReviews from "../Reviews/AllReviews";
 import ReviewForm from "../Reviews/ReviewForm/ReviewForm";
 
 const router = createBrowserRouter([
@@ -43,7 +44,12 @@ const router = createBrowserRouter([
                 path: '/review/:id',
                 element : <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>,
                 loader: ({params}) => fetch(`https://assignment11-server-jet.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/allReviews',
+                element: <PrivateRoute><AllReviews></AllReviews></PrivateRoute>
             }
+           
         ]
     }
 ])
