@@ -1,22 +1,11 @@
 import React, { useContext } from 'react';
 
 
-const Review = ({review}) => {
+const Review = ({review, handleDelete}) => {
     
    const {_id, serviceId, name, email, address, image, message, reviewTitle} = review;
 
-   const handleDelete = id => {
-        const proceed = window.confirm('you want to delete this review')
-        if(proceed){
-            fetch(`https://assignment11-server-jet.vercel.app/reviews/${id}`, {
-                method: "DELETE"
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-        }
-   }
+   
     return (
         <div>
             <div className="card flex justify-between card-side bg-base-100 shadow-xl mt-5 p-3 ml-10">

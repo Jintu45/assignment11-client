@@ -14,12 +14,29 @@ const AllReviews = () => {
         .then(data => setReviews(data))
     }, [user?.email])
     
+    const handleDelete = id => {
+        const proceed = window.confirm('you want to delete this review')
+        if(proceed){
+            fetch(`https://assignment11-server-jet.vercel.app/reviews/${id}`, {
+                method: "DELETE"
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    alert('deleted successfully')
+                    const remaining = reviews.filter(rev => rev._id !== id)
+                    setReviews(remaining)
+                }
+            })
+        }
+   }
     return (
         <div>
             {
                 reviews.map(review => <Review
                     key={review._id}
                     review={review}
+                    handleDelete={handleDelete}
                 >
                     
                 </Review>)
