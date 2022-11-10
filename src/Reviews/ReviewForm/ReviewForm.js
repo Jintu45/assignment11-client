@@ -40,7 +40,7 @@ const ReviewForm = () => {
                 alert('review added successfully')
                 form.reset()
             }
-            console.log(data)
+            
         })
         .catch(err => alert(err))
     }
