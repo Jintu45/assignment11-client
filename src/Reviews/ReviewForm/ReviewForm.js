@@ -23,7 +23,8 @@ const ReviewForm = () => {
             email, 
             address,
             image,
-            message
+            message,
+            reviewTitle: title
         }
 
         fetch('http://localhost:5000/reviews',{
@@ -48,6 +49,7 @@ const ReviewForm = () => {
         <div className='ml-5'>
         <h2 className='text-3xl my-3 font-medium w-1/2 text-center'>Add a Review</h2>
         <div className='sm:w-1/2 my-8 text-center bg-gray-200 p-10 rounded-md '>
+            <h4 className='text-xl font-semibold mb-4'>{title}</h4>
             <form onSubmit={handleReview}>
                 <div className='sm:flex justify-between'>
                     <div className="form-control">
@@ -60,7 +62,7 @@ const ReviewForm = () => {
                         <label className="label">
                             <span className="label-text">Address</span>
                         </label>
-                        <input type="text" name='address' placeholder="address" className="input input-bordered sm:w-56" required />
+                        <input type="text" name='address'placeholder="address" className="input input-bordered sm:w-56" required/>
                     </div>
                 </div>
                 <div className='sm:flex justify-between mt-3'>
